@@ -6,7 +6,30 @@ using System.Threading.Tasks;
 
 namespace IDF_Project
 {
-    internal class Class1
+    public class Hamas : MilitaryOrganization
     {
+        protected override int yearOfConstruction { get ; set; }
+        protected  override string chiefOfStaff { get ; set; }
+
+        private List<Terrorist> strikeOptionList; 
+
+        public Hamas(int yearOfConstruction, string chiefOfStaff)
+        {
+            this.yearOfConstruction = yearOfConstruction;
+            this.chiefOfStaff = chiefOfStaff;
+            this.strikeOptionList = new List<Terrorist>(); 
+        }
+
+        public void AddStrikOption(Terrorist newTerrorist)
+        {
+            this.strikeOptionList.Add(newTerrorist);
+
+        }
+
+        public void RemoveStrikOption(Terrorist currentTerrorist)
+        {
+            this.strikeOptionList.Remove(currentTerrorist);
+        }
+
     }
 }
