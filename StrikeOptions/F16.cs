@@ -1,23 +1,26 @@
 namespace IDF_Project;
 
-public class M109 : StrikeOptions
+public class F16 : StrikeOptions
 {
     protected override string name { get; set; }
     protected override int capacity { get; set; }
     protected override int energySupply { get; set; }
     protected override string[] targetType { get; set; }
 
-    public M109()
+    protected string Opreitor;
+
+    public F16()
     {
-        name = "M109 Artillery";
-        capacity = 40;
+        name = "F16 Fighter Jet";
+        capacity = 8;
         energySupply = 100;
-        targetType = new[] { "open areas" };
+        targetType = new[] {"buildings"};
+        Opreitor = "pilot";
     }
 
-    protected override void Fire()
+    public override void Fire()
     {
         capacity -= 1;
-        energySupply -= 10;
+        energySupply -= 13;
     }
 }

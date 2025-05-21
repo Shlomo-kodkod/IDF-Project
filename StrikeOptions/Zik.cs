@@ -1,26 +1,23 @@
 namespace IDF_Project;
 
-public class F16 : StrikeOptions
+public class Zik : StrikeOptions
 {
     protected override string name { get; set; }
     protected override int capacity { get; set; }
     protected override int energySupply { get; set; }
     protected override string[] targetType { get; set; }
 
-    protected string Opreitor;
-
-    public F16()
+    public Zik()
     {
-        name = "F16 Fighter Jet";
-        capacity = 8;
+        name = "Zik drone";
+        capacity = 3;
         energySupply = 100;
-        targetType = new[] {"buildings"};
-        Opreitor = "pilot";
+        targetType = new[] { "people", "vehicles" };
     }
 
-    protected override void Fire()
+    public override void Fire()
     {
         capacity -= 1;
-        energySupply -= 13;
+        energySupply -= 33;
     }
 }
