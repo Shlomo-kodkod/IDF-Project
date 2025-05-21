@@ -8,9 +8,8 @@ namespace IDF_Project
 {
     public abstract class MilitaryOrganization
     {
-        public abstract int yearOfConstruction { get; set;  }
-        public abstract string chiefOfStaff { get; set; }
-
+        protected abstract int yearOfConstruction { get; set;  }
+        protected abstract string chiefOfStaff { get; set; }
 
     }
 }
