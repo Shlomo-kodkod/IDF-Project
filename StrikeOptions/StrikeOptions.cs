@@ -7,6 +7,6 @@ public abstract class StrikeOptions
     protected abstract int energySupply{ get; set; }
     protected abstract string[] targetType{ get; set; }
     
-    protected abstract void Fire();
+    public abstract void Fire();
 
 }

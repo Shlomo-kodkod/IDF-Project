@@ -1,23 +1,23 @@
 namespace IDF_Project;
 
-public class Zik : StrikeOptions
+public class M109 : StrikeOptions
 {
     protected override string name { get; set; }
     protected override int capacity { get; set; }
     protected override int energySupply { get; set; }
     protected override string[] targetType { get; set; }
 
-    public Zik()
+    public M109()
     {
-        name = "Zik drone";
-        capacity = 3;
+        name = "M109 Artillery";
+        capacity = 40;
         energySupply = 100;
-        targetType = new[] { "people", "vehicles" };
+        targetType = new[] { "open areas" };
     }
 
-    protected override void Fire()
+    public override void Fire()
     {
         capacity -= 1;
-        energySupply -= 33;
+        energySupply -= 10;
     }
 }
