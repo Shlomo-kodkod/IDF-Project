@@ -19,8 +19,9 @@ namespace IDF_Project
             this.timeStemp = timeStemp;
         }   
 
-        public void UpdateLocation(DateTime timeStemp)
+        public void UpdateLocation(string lastLocation, DateTime timeStemp)
         {
+            this.lastLocation = lastLocation;
             this.timeStemp = timeStemp;
         }
     }
