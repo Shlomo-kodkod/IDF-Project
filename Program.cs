@@ -10,10 +10,6 @@ namespace IDF_Project
     {
         public static void Main(string[] args)
         {
-            Terrorist a = new Terrorist("s", 2, true, ["ff"]);
-            Console.WriteLine(a.IsStatus());
-            a.ChangeStatus();
-            Console.WriteLine(a.IsStatus());
         }
             
         
