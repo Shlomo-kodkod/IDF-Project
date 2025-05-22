@@ -9,13 +9,15 @@ namespace IDF_Project
     public class Terrorist
     {
         private string Name;
+        private int ID;
         private int Rank;
         private bool Status;
         private string[] Weapons;   
 
-        public Terrorist(string Name, int Rank, bool Status, string[] Weapons)
+        public Terrorist(string Name,int id, int Rank, bool Status, string[] Weapons)
         {
             this.Name = Name;
+            this.ID = id;
             this.Rank = Rank;
             this.Status = Status;
             this.Weapons = Weapons;
@@ -35,6 +37,11 @@ namespace IDF_Project
         public string[] GetWeapons()
         {
             return Weapons;
+        }
+
+        public int GetID()
+        {
+            return ID;
         }
         public void ChangeToDead()
         {

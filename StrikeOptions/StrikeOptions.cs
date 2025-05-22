@@ -8,5 +8,6 @@ public abstract class StrikeOptions
     protected abstract string[] targetType{ get; set; }
     
     public abstract void Fire();
+    public abstract string ToString();
 
 }

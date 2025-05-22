@@ -20,4 +20,9 @@ public class M109 : StrikeOptions
         capacity -= 1;
         energySupply -= 10;
     }
+
+    public override string ToString()
+    {
+        return $" Mame : {name}, capacity : {capacity}, energySupply : {energySupply}%";
+    }
 }
