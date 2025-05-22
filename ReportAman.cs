@@ -24,5 +24,10 @@ namespace IDF_Project
             this.lastLocation = lastLocation;
             this.timeStemp = timeStemp;
         }
+
+        public Terrorist GetTerrorist()
+        {
+            return this.terroristDada;
+        }
     }
 }

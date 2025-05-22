@@ -23,6 +23,14 @@ namespace IDF_Project
             this.Weapons = Weapons;
         }
 
+        public override string ToString()
+        {
+            return $"name: {this.Name}\n" +
+                $"Rank: {this.Rank}\n" +
+                $"{(this.IsAlive() ? "Alive" : "Dead")}\n" +
+                $"{this.GetWeaponsString()}";
+
+        }
 
         public int GetRank()
         {
@@ -39,6 +47,9 @@ namespace IDF_Project
             return Weapons;
         }
 
+        public string GetWeaponsString()
+        {
+            return String.Join(" ", this.GetWeapons());
         public int GetID()
         {
             return ID;
