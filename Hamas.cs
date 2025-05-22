@@ -11,24 +11,24 @@ namespace IDF_Project
         protected override int yearOfConstruction { get ; set; }
         protected  override string chiefOfStaff { get ; set; }
 
-        private List<Terrorist> strikeOptionList; 
+        private List<Terrorist> TerroristList; 
 
         public Hamas(int yearOfConstruction, string chiefOfStaff)
         {
             this.yearOfConstruction = yearOfConstruction;
             this.chiefOfStaff = chiefOfStaff;
-            this.strikeOptionList = new List<Terrorist>(); 
+            this.TerroristList = new List<Terrorist>(); 
         }
 
         public void AddStrikOption(Terrorist newTerrorist)
         {
-            this.strikeOptionList.Add(newTerrorist);
+            this.TerroristList.Add(newTerrorist);
 
         }
 
         public void RemoveStrikOption(Terrorist currentTerrorist)
         {
-            this.strikeOptionList.Remove(currentTerrorist);
+            this.TerroristList.Remove(currentTerrorist);
         }
 
     }
