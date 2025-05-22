@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace IDF_Project
 {
-    public class Aman
+    public class ReportAman
     {
         private Terrorist terroristDada;
         private string lastLocation;
         private DateTime timeStemp;
 
-        public Aman(Terrorist terroristDada, string leastLocation, DateTime timeStemp)
+        public ReportAman(Terrorist terroristDada, string leastLocation, DateTime timeStemp)
         {
             this.terroristDada = terroristDada;
             this.lastLocation = leastLocation;
