@@ -12,9 +12,9 @@ namespace IDF_Project
         private int ID;
         private int Rank;
         private bool Status;
-        private string[] Weapons;   
+        private string[] Weapons;
 
-        public Terrorist(string Name,int id, int Rank, bool Status, string[] Weapons)
+        public Terrorist(string Name, int id, int Rank, bool Status, string[] Weapons)
         {
             this.Name = Name;
             this.ID = id;
@@ -26,9 +26,9 @@ namespace IDF_Project
         public override string ToString()
         {
             return $"name: {this.Name}\n" +
-                $"Rank: {this.Rank}\n" +
-                $"{(this.IsAlive() ? "Alive" : "Dead")}\n" +
-                $"{this.GetWeaponsString()}";
+                   $"Rank: {this.Rank}\n" +
+                   $"{(this.IsAlive() ? "Alive" : "Dead")}\n" +
+                   $"{this.GetWeaponsString()}";
 
         }
 
@@ -50,22 +50,21 @@ namespace IDF_Project
         public string GetWeaponsString()
         {
             return String.Join(" ", this.GetWeapons());
-        public int GetID()
-        {
-            return ID;
         }
+
+        public int GetID()
+            {
+                return ID;
+            }
+
         public void ChangeToDead()
         {
             bool currentStatus = this.IsAlive();
 
             if (currentStatus)
             {
-                Status = !Status;
+                    Status = !Status;
             }
         }
-
-        
     }
-
-
 }

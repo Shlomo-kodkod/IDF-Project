@@ -11,7 +11,7 @@ public class Aman
 
     public void AddReport(ReportAman report)
     {
-        int ID = report.GetTerroist.GetID;
+        int ID = report.GetTerrorist().GetID();
         {
             if (listReport.Keys.Contains(ID))
             {
