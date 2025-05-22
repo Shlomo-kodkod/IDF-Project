@@ -31,5 +31,10 @@ namespace IDF_Project
             this.TerroristList.Remove(currentTerrorist);
         }
 
+        public List<Terrorist> GetTerroristList()
+        {
+            return this.TerroristList;
+        }
+
     }
 }
