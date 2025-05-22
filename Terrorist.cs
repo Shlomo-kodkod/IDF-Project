@@ -27,7 +27,7 @@ namespace IDF_Project
             return Rank;
         }
 
-        public bool GetStatus()
+        public bool IsAlive()
         {
             return Status;
         }
@@ -36,9 +36,14 @@ namespace IDF_Project
         {
             return Weapons;
         }
-        public void ChangeStatus()
+        public void ChangeToDead()
         {
-            Status = !Status;
+            bool currentStatus = this.IsAlive();
+
+            if (currentStatus)
+            {
+                Status = !Status;
+            }
         }
 
         
