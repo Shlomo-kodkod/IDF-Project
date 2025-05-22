@@ -20,4 +20,8 @@ public class Zik : StrikeOptions
         capacity -= 1;
         energySupply -= 33;
     }
+    public override string ToString()
+    {
+        return $" Mame : {name}, capacity : {capacity}, energySupply : {energySupply}%";
+    }
 }

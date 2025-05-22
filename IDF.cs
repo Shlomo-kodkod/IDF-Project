@@ -14,13 +14,13 @@ public class IDF : MilitaryOrganization
         this.strikeOptionList = new List<StrikeOptions>(); 
     }
 
-    public void AddStrikOption(StrikeOptions newTool)
+    public void AddStrikeOption(StrikeOptions newTool)
     {
         this.strikeOptionList.Add(newTool);
 
     }
 
-    public void RemoveStrikOption(StrikeOptions currentTool)
+    public void RemoveStrikeOption(StrikeOptions currentTool)
     {
         this.strikeOptionList.Remove(currentTool);
     }
