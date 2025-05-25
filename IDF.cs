@@ -26,7 +26,16 @@ public class IDF : MilitaryOrganization
     }
     public List<StrikeOptions> GetToolsList()
     {
-        return this.strikeOptionList;
+        List<StrikeOptions> availableTool = new List<StrikeOptions>();
+        foreach (StrikeOptions tool in strikeOptionList)
+        {
+            if (tool.GetCapacity()>0)
+            {
+                availableTool.Add(tool);
+            }
+        }
+        return availableTool;
     }
+    
 
 }
