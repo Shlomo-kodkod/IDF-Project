@@ -23,4 +23,18 @@ public class Aman
             }
         }
     }
+
+    public List<ReportAman> GetTerroristReport(Terrorist terrorist)
+    {
+        int currentId = terrorist.GetID();
+        return this.listReport[currentId];
+    }
+
+    public string GetLastLocation(Terrorist terrorist)
+    {
+        List<ReportAman> terroristReport = this.GetTerroristReport(terrorist);
+        int len = terroristReport.Count();
+        string lastLocation = terroristReport[len - 1].GetLastLocation();
+        return lastLocation;
+    }
 }
