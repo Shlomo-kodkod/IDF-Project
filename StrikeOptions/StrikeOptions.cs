@@ -11,5 +11,8 @@ public abstract class StrikeOptions
     public abstract string ToString();
 
     public abstract int GetCapacity();
+    
+    public abstract string[] GettargetType();
+
 
 }

@@ -37,5 +37,17 @@ public class IDF : MilitaryOrganization
         return availableTool;
     }
     
+    public List<StrikeOptions> GetRelevantToolsList(string targetType)
+    {
+        List<StrikeOptions> relevantTool = new List<StrikeOptions>();
+        foreach (StrikeOptions tool in strikeOptionList)
+        {
+            if (tool.GettargetType().Contains(targetType))
+            {
+                relevantTool.Add(tool);
+            }
+        }
+        return relevantTool;
+    }
 
 }

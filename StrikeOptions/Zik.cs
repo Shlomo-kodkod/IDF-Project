@@ -28,4 +28,8 @@ public class Zik : StrikeOptions
     {
         return capacity;
     }
+    public override string[] GettargetType()
+    {
+        return targetType;
+    }
 }

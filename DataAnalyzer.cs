@@ -37,6 +37,7 @@ namespace IDF_Project
         {
             Console.WriteLine(string.Join("\n", idf.GetToolsList()));
         }
+        
 
         public Terrorist GetMostDangerousTerrorist(List<Terrorist> list)
         {
