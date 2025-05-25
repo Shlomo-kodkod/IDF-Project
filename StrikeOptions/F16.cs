@@ -27,4 +27,10 @@ public class F16 : StrikeOptions
     {
         return $"Mame : {name}, capacity : {capacity}, energySupply : {energySupply}%";
     }
+    
+    public override int GetCapacity()
+    {
+        return capacity;
+    }
+
 }

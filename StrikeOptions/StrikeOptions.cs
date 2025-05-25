@@ -10,4 +10,6 @@ public abstract class StrikeOptions
     public abstract void Fire();
     public abstract string ToString();
 
+    public abstract int GetCapacity();
+
 }
