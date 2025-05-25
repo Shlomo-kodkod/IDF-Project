@@ -29,5 +29,10 @@ namespace IDF_Project
         {
             return this.terroristDada;
         }
+
+        public string GetLastLocation()
+        {
+            return this.lastLocation;
+        }
     }
 }

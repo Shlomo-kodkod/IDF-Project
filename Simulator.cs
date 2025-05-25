@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IDF_Project
 {
-    internal class simulator
+    internal class Simulator
     {
 
     }
