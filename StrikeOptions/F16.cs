@@ -33,4 +33,10 @@ public class F16 : StrikeOptions
         return capacity;
     }
 
+    public override string[] GettargetType()
+    {
+        return targetType;
+    }
+
+
 }
