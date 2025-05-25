@@ -24,4 +24,12 @@ public class Zik : StrikeOptions
     {
         return $" Mame : {name}, capacity : {capacity}, energySupply : {energySupply}%";
     }
+    public override int GetCapacity()
+    {
+        return capacity;
+    }
+    public override string[] GettargetType()
+    {
+        return targetType;
+    }
 }
