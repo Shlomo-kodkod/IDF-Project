@@ -56,6 +56,12 @@ namespace IDF_Project
 
         private int GetTerroristScore(Terrorist terrorist)
         {
+            int score = terrorist.GetRank() * GetWeaponsScore(terrorist);
+            return score;
+        }
+
+        private int GetTerroristScore(Terrorist terrorist)
+        {
             int score = terrorist.GetRank() * terrorist.GetWeapons().Length;
         {
             Console.WriteLine(string.Join("\n", idf.GetToolsList()));
@@ -94,11 +100,7 @@ namespace IDF_Project
             }
             return score;
         }
-        private int GetTerroristScore(Terrorist terrorist)
-        {
-            int score = terrorist.GetRank() * GetWeaponsScore(terrorist);
-            return score;
-        }
+        
 
     }
 }
