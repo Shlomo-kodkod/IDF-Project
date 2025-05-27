@@ -13,7 +13,7 @@ namespace IDF_Project
             return report[0].GetTerrorist();
         }
 
-        public static Terrorist MostReportedTerorist(Dictionary<string, List<ReportAman>> terrorists)
+        public static void MostReportedTerorist(Dictionary<string, List<ReportAman>> terrorists)
         {
             int maxReported = 0;
             List<ReportAman> currentList = new List<ReportAman>();
@@ -30,7 +30,7 @@ namespace IDF_Project
                 }
             }
 
-            return FindTerroristByReport(currentList);
+            Console.WriteLine(FindTerroristByReport(currentList));
         }
 
         public void GetAllStrikeOptions(IDF idf)
@@ -38,7 +38,7 @@ namespace IDF_Project
             Console.WriteLine(string.Join("\n", idf.GetToolsList()));
         }
         
-        public Terrorist GetMostDangerousTerrorist(List<Terrorist> list)
+        public void GetMostDangerousTerrorist(List<Terrorist> list)
         {
             Terrorist mostDangereous = null;
             int score = 0;
@@ -51,7 +51,7 @@ namespace IDF_Project
                     score = tscore;
                 }
             }
-            return mostDangereous;
+            Console.WriteLine(mostDangereous);
         }
 
         private int GetWeaponsScore(Terrorist terrorist)
