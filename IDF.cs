@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace IDF_Project;
 
 public class IDF : MilitaryOrganization
@@ -40,7 +42,8 @@ public class IDF : MilitaryOrganization
     public List<StrikeOptions> GetRelevantToolsList(string targetType)
     {
         List<StrikeOptions> relevantTool = new List<StrikeOptions>();
-        foreach (StrikeOptions tool in strikeOptionList)
+        List<StrikeOptions> availableTool = GetToolsList();
+        foreach (StrikeOptions tool in availableTool)
         {
             if (tool.GettargetType().Contains(targetType))
             {
