@@ -8,18 +8,19 @@ namespace IDF_Project
 {
     class Simulator
     {
+        Random random = new Random();
+        Hamas hamas = new Hamas(1987,"عز الدين الحداد");
+        IDF idf = new IDF(1948, "Lieutenant General Eyal Zamir");
+        Aman aman = new Aman();
         public Simulator()
         {
+            
             HamasAndTerrorist();
             IdfAndStrike();
             InitAmanReport();
             
         }
         
-        Random random = new Random();
-        Hamas hamas = new Hamas(1987,"عز الدين الحداد");
-        IDF idf = new IDF(1948, "Lieutenant General Eyal Zamir");
-        Aman aman = new Aman();
         
 
         void HamasAndTerrorist()
