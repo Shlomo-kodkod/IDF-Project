@@ -26,6 +26,7 @@ namespace IDF_Project
         public override string ToString()
         {
             return $"name: {this.Name}\n" +
+                   $"ID: {this.ID}\n" +
                    $"Rank: {this.Rank}\n" +
                    $"{(this.IsAlive() ? "Alive" : "Dead")}\n" +
                    $"{this.GetWeaponsString()}";
