@@ -75,7 +75,7 @@ namespace IDF_Project
             int score = terrorist.GetRank() * GetWeaponsScore(terrorist);
             return score;
         }
-
-
+        
+        
     }
 }

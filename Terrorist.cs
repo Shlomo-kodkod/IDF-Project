@@ -28,7 +28,7 @@ namespace IDF_Project
             return $"name: {this.Name}\n" +
                    $"Rank: {this.Rank}\n" +
                    $"{(this.IsAlive() ? "Alive" : "Dead")}\n" +
-                   $"{this.GetWeaponsString()}";
+                   $"{this.GetWeaponsString()}\n";
 
         }
 
