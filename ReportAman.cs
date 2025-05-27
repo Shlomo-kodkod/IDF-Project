@@ -34,5 +34,10 @@ namespace IDF_Project
         {
             return this.lastLocation;
         }
+
+        public string ToString()
+        {
+            return $"{terroristDada.ToString()}\n {lastLocation}\n {timeStemp}\n";
+        }
     }
 }

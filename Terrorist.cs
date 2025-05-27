@@ -29,7 +29,7 @@ namespace IDF_Project
                    $"ID: {this.ID}\n" +
                    $"Rank: {this.Rank}\n" +
                    $"{(this.IsAlive() ? "Alive" : "Dead")}\n" +
-                   $"{this.GetWeaponsString()}";
+                   $"{this.GetWeaponsString()}\n";
 
         }
 
