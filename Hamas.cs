@@ -31,9 +31,17 @@ namespace IDF_Project
             this.TerroristList.Remove(currentTerrorist);
         }
 
-        public List<Terrorist> GetTerroristList()
+        public List<Terrorist> GetAliveTerroristList()
         {
-            return this.TerroristList;
+            List<Terrorist> aliveTerrorist = new List<Terrorist>();
+            foreach (Terrorist terrorist in TerroristList)
+            {
+                if (terrorist.IsAlive())
+                {
+                    aliveTerrorist.Add(terrorist);
+                }
+            }
+            return aliveTerrorist;
         }
 
         public Terrorist FindTerroristById(int id)
