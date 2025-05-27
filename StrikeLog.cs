@@ -7,9 +7,14 @@ public class StrikeLog
     private StrikeOptions TypeStrike;
     private string OperatorName;
     private ReportAman LastReport;
-    public static List<StrikeLog> logs = new List<StrikeLog>();
+    private List<StrikeLog> logs;
 
-    public StrikeLog(Terrorist terrorist, StrikeOptions typeStrike, string operatorName, ReportAman lastReport, int leftAmmo)
+    public StrikeLog()
+    {
+        logs = new List<StrikeLog>();
+    }
+
+    public void AddStrikeLog(Terrorist terrorist, StrikeOptions typeStrike, string operatorName, ReportAman lastReport, int leftAmmo)
     {
         CurentTime = DateTime.Now;
         Terrorist = terrorist;
