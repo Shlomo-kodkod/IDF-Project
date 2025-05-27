@@ -36,5 +36,18 @@ namespace IDF_Project
             return this.TerroristList;
         }
 
+        public Terrorist FindTerroristById(int id)
+        {
+            Terrorist result = null;
+            foreach(Terrorist terrorist in TerroristList)
+            {
+                if (terrorist.GetID() == id)
+                {
+                    result = terrorist;
+                }
+            }
+            return result;
+        }
+
     }
 }
