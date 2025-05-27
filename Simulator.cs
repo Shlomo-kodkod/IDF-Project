@@ -76,7 +76,7 @@ namespace IDF_Project
             string[] targetType = { "buildings", "open areas", "people", "vehicles" };
             for (int i = 0; i < random.Next(10,20); i++)
             {
-                Terrorist terrorist = hamas.GetTerroristList()[random.Next(0, hamas.GetTerroristList().Count)];
+                Terrorist terrorist = hamas.GetAliveTerroristList()[random.Next(0, hamas.GetAliveTerroristList().Count)];
                 string lastLocition = targetType[random.Next(0, targetType.Length)];
                 DateTime timeStemp = GetRandomTime();
                 
