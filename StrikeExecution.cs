@@ -26,7 +26,7 @@ namespace IDF_Project
             return currentTime;
         }
 
-        public string ChoseAttackWeapon(Terrorist terrorist, string location)
+        public string ChoseAttackWeapon(string location)
         {
             return this.attackMap[location];
         }
@@ -58,6 +58,17 @@ namespace IDF_Project
             }
             while (!IsValidName(name));
             
+        }
+
+        public void MakeStrike(int terroritId, Hamas hamas, IDF idf, Aman aman)
+        {
+            Hamas hamas1 = hamas;
+            IDF idf1 = idf;
+            Aman aman1 = aman;
+            Terrorist target = hamas1.FindTerroristById(terroritId);
+            string LastLocation = aman.GetLastLocation(target);
+            StrikeOptions weapon = idf1.GetRelevantToolsList(LastLocation)[0];
+            weapon.Fire();
         }
     }
 }
