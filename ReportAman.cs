@@ -34,6 +34,10 @@ namespace IDF_Project
         {
             return this.lastLocation;
         }
+        public DateTime GetLastTimeStemp()
+        {
+            return timeStemp;
+        }
 
         public string ToString()
         {
