@@ -25,7 +25,7 @@ public class F16 : StrikeOptions
     }
     public override string ToString()
     {
-        return $"Mame : {name}, capacity : {capacity}, energySupply : {energySupply}%";
+        return $"Name : {name}, capacity : {capacity}, energySupply : {energySupply}%";
     }
     
     public override int GetCapacity()
