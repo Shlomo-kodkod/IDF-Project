@@ -4,7 +4,7 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        Menue menue = new Menue();
+        Menu menue = new Menu();
         menue.RumMenue();
     }
 }
