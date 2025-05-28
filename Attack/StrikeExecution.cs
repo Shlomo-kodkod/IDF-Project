@@ -20,17 +20,6 @@ namespace IDF_Project
                 { "open area","M109 Artillery"}
             };
         }
-        public static DateTime GetCurrentTime()
-        {
-            DateTime currentTime = DateTime.Now;
-            return currentTime;
-        }
-
-        public string ChoseAttackWeapon(string location)
-        {
-            return this.attackMap[location];
-        }
-
 
         public static bool IsValidName(string name)
         {
