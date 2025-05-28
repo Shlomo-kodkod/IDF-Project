@@ -88,7 +88,7 @@ namespace IDF_Project
 
         public int GetIdToAttack(Hamas hamas)
         {
-            int id = GetId();
+            int id = 0;
             do
             {
                 id = GetId();
