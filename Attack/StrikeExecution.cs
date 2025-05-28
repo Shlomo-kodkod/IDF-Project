@@ -54,22 +54,48 @@ namespace IDF_Project
             {
                 Console.WriteLine("Enter your name: ");
                 name = Console.ReadLine();
-                return name;
             }
             while (!IsValidName(name));
-            
+            return name;
+
         }
 
-        public void MakeStrike(int terroritId, Hamas hamas, IDF idf, Aman aman)
+        public void MakeStrike(StrikeLog strikeLog ,Hamas hamas, IDF idf, Aman aman)
         {
-            Hamas hamas1 = hamas;
-            IDF idf1 = idf;
-            Aman aman1 = aman;
-            Terrorist target = hamas1.FindTerroristById(terroritId);
+            int terroristId = GetIdToAttack(hamas);
+            Terrorist target = hamas.FindTerroristById(terroristId);
             string LastLocation = aman.GetLastLocation(target);
-            StrikeOptions weapon = idf1.GetRelevantToolsList(LastLocation)[0];
+            StrikeOptions weapon = idf.GetRelevantToolsList(LastLocation)[0];
             weapon.Fire();
             target.ChangeToDead();
+            strikeLog.AddStrikeLog(target, weapon, GetOfficerName(),
+            aman.GetTerroristReport(target)[(aman.GetTerroristReport(target).Count) - 1], weapon.GetCapacity());
+        }
+
+        public int GetId()
+        {
+            int id;
+            Console.WriteLine("Enter terrorist id to attack: ");
+            string strId = Console.ReadLine();
+
+            while(! int.TryParse(strId, out _))
+            {
+                Console.WriteLine("Please enter valid id: ");
+                strId = Console.ReadLine();
+            }
+            return int.Parse(strId);
+        }
+
+        public int GetIdToAttack(Hamas hamas)
+        {
+            int id = GetId();
+            do
+            {
+                id = GetId();
+            }
+            while (!hamas.IsTerroristExsist(id));
+
+            return id;
         }
         
     }
