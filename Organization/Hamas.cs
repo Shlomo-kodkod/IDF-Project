@@ -26,11 +26,6 @@ namespace IDF_Project
 
         }
 
-        public void RemoveStrikOption(Terrorist currentTerrorist)
-        {
-            this.TerroristList.Remove(currentTerrorist);
-        }
-
         public List<Terrorist> GetAliveTerroristList()
         {
             List<Terrorist> aliveTerrorist = new List<Terrorist>();
