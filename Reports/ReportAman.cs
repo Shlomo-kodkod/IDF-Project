@@ -19,26 +19,42 @@ namespace IDF_Project
             this.timeStemp = timeStemp;
         }   
 
+/// <summary>
+        /// Updates the last known location and timestamp of the report.
+        /// </summary>
         public void UpdateLocation(string lastLocation, DateTime timeStemp)
         {
             this.lastLocation = lastLocation;
             this.timeStemp = timeStemp;
         }
 
+/// <summary>
+        /// Gets the terrorist associated with this report.
+        /// </summary>
         public Terrorist GetTerrorist()
         {
             return this.terroristDada;
         }
 
+/// <summary>
+        /// Gets the last known location from the report.
+        /// </summary>
         public string GetLastLocation()
         {
             return this.lastLocation;
         }
+
+/// <summary>
+        /// Gets the timestamp of the last known location.
+        /// </summary>
         public DateTime GetLastTimeStemp()
         {
             return timeStemp;
         }
 
+/// <summary>
+        /// Returns a string representation of the report.
+        /// </summary>
         public string ToString()
         {
             return $"{terroristDada.ToString()}\n {lastLocation}\n {timeStemp}\n";

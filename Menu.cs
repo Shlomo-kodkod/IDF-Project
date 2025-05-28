@@ -25,7 +25,7 @@ namespace IDF_Project
                 "3 >>> Getting the most dangerous terrorist on the basis of quality rating.\n" +
                 "4 >>> Assault by ID number.\n" +
                 "0 >>> Exit\n" +
-                "Enter your choice:");
+                "Enter your choice:\n");
         }
 
         public string GetChoice()
