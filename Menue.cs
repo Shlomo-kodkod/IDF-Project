@@ -9,6 +9,14 @@ namespace IDF_Project
     public class Menue
     {
         static Simulator simulator = new Simulator();
+        IDF idf = simulator.GetIDF();
+        Hamas hams = simulator.GetHamas();
+        Aman aman = simulator.GetAman();
+        StrikeLog strikeLog = simulator.GetStrikeLog();
+        StrikeExecution strikeExecution = simulator.GetStrikeExecution();
+        DataAnalyzer dataAnalyzer = simulator.GetDataAnilyzer();
+
+
         public void ShowMenue()
         {
             Console.Write("=== Menue ===\n" +
@@ -36,18 +44,19 @@ namespace IDF_Project
         public void MakeChoice(string choice)
         {
             switch (choice)
-            {case "1" :
-                simulator.GetDataAnilyzer().MostReportedTerorist(simulator.GetAman().GetReportDic());
-                break;
+            {
+                case "1" :
+                    dataAnalyzer.MostReportedTerorist(aman.GetReportDic());
+                    break;
                 case "2" :
-                simulator.GetDataAnilyzer().GetAllStrikeOptions(simulator.GetIDF());
-                break;
+                    dataAnalyzer.GetAllStrikeOptions(idf);
+                    break;
                 case "3":
-                simulator.GetDataAnilyzer().GetMostDangerousTerrorist(simulator.GetHamas().GetAliveTerroristList());
-                break;
+                    dataAnalyzer.GetMostDangerousTerrorist(hams.GetAliveTerroristList());
+                    break;
                 case "4":
-                // simulator.GetStrikeExecution().MakeStrike(simulator.);
-                simulator.GetStrikeLog().PrintLastLog();
+                    strikeExecution.MakeStrike(strikeLog, hams, idf, aman);
+                    strikeLog.PrintLastLog();
                 break;
             }
             

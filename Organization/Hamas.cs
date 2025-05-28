@@ -57,5 +57,17 @@ namespace IDF_Project
             return result;
         }
 
+        public bool IsTerroristExsist(int terroristId)
+        {
+            foreach(Terrorist terrorist in TerroristList)
+            {
+                if (terrorist.GetID() == terroristId)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
     }
 }
