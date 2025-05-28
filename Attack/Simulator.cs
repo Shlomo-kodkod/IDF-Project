@@ -12,6 +12,9 @@ namespace IDF_Project
         Hamas hamas = new Hamas(1987,"عز الدين الحداد");
         IDF idf = new IDF(1948, "Lieutenant General Eyal Zamir");
         Aman aman = new Aman();
+        DataAnalyzer dataAnalyzer = new DataAnalyzer();
+        StrikeExecution strikeExecution = new StrikeExecution();
+        StrikeLog strikeLog = new StrikeLog();
         public Simulator()
         {
             
@@ -90,6 +93,32 @@ namespace IDF_Project
                 Random random = new Random();
                 return DateTime.Now.AddHours(-random.NextDouble() * 24);
             }
+        }
+
+        public DataAnalyzer GetDataAnilyzer()
+        {
+            return this.dataAnalyzer;
+        }
+        
+        public IDF GetIDF()
+        {
+            return this.idf;
+        }
+        public Hamas GetHamas()
+        {
+            return this.hamas;
+        }
+        public Aman GetAman()
+        {
+            return this.aman;
+        }
+        public StrikeExecution GetStrikeExecution()
+        {
+            return this.strikeExecution;
+        }
+        public StrikeLog GetStrikeLog()
+        {
+            return this.strikeLog;
         }
 
 

@@ -4,8 +4,7 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        Simulator simulator = new Simulator();
-
-
+        Menue menue = new Menue();
+        menue.RumMenue();
     }
 }

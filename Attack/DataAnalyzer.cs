@@ -13,13 +13,13 @@ namespace IDF_Project
             return report[0].GetTerrorist();
         }
 
-        public static void MostReportedTerorist(Dictionary<string, List<ReportAman>> terrorists)
+        public void MostReportedTerorist(Dictionary<int, List<ReportAman>> terrorists)
         {
             int maxReported = 0;
             List<ReportAman> currentList = new List<ReportAman>();
             int currentReportNum = 0;
 
-            foreach (KeyValuePair<string, List<ReportAman>> item in terrorists)
+            foreach (KeyValuePair<int, List<ReportAman>> item in terrorists)
             {
                 currentReportNum = item.Value.Count();
 
@@ -35,7 +35,10 @@ namespace IDF_Project
 
         public void GetAllStrikeOptions(IDF idf)
         {
-            Console.WriteLine(string.Join("\n", idf.GetToolsList()));
+            foreach (StrikeOptions strikeOptions in idf.GetToolsList())
+            {
+                Console.WriteLine(strikeOptions.ToString());
+            }
         }
         
         public void GetMostDangerousTerrorist(List<Terrorist> list)

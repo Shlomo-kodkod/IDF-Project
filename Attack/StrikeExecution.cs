@@ -69,6 +69,8 @@ namespace IDF_Project
             string LastLocation = aman.GetLastLocation(target);
             StrikeOptions weapon = idf1.GetRelevantToolsList(LastLocation)[0];
             weapon.Fire();
+            target.ChangeToDead();
         }
+        
     }
 }

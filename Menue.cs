@@ -8,7 +8,8 @@ namespace IDF_Project
 {
     public class Menue
     {
-        public static void ShowMenue()
+        static Simulator simulator = new Simulator();
+        public void ShowMenue()
         {
             Console.Write("=== Menue ===\n" +
                 "1 >>> Identifying the terrorist with the most intelligence reports.\n" +
@@ -19,7 +20,7 @@ namespace IDF_Project
                 "Enter your choice:");
         }
 
-        public static string GetChoice()
+        public string GetChoice()
         {
             string[] options = new string[] { "0", "1", "2", "3", "4" }; 
             string choice = Console.ReadLine();
@@ -31,33 +32,38 @@ namespace IDF_Project
             }
             return choice;
         }
+        
+        public void MakeChoice(string choice)
+        {
+            switch (choice)
+            {case "1" :
+                simulator.GetDataAnilyzer().MostReportedTerorist(simulator.GetAman().GetReportDic());
+                break;
+                case "2" :
+                simulator.GetDataAnilyzer().GetAllStrikeOptions(simulator.GetIDF());
+                break;
+                case "3":
+                simulator.GetDataAnilyzer().GetMostDangerousTerrorist(simulator.GetHamas().GetAliveTerroristList());
+                break;
+                case "4":
+                // simulator.GetStrikeExecution().MakeStrike(simulator.);
+                simulator.GetStrikeLog().PrintLastLog();
+                break;
+            }
+            
 
+        }
 
-        //public static MakeChoice(string choice)
-        //{
-        //    switch (choice)
-        //    {
-        //        case "1":
-
-        //    }
-
-        //}
-
-        public static void RumMenue()
+        public void RumMenue()
         {
             string choice = "";
             do
             {
                 ShowMenue();
                 choice = GetChoice();
-
-                switch (choice)
-                {
-
-                }
+                MakeChoice(choice);
             }
             while (!choice.Equals("0"));
-            
         }
     }
 }

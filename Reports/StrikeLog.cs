@@ -25,12 +25,12 @@ public class StrikeLog
         logs.Add(this);
     }
     
-    void PrintLastLog()
+    public void PrintLastLog()
     {
         Console.WriteLine(logs[logs.Count-1]);
     }
 
-    void PrintLog(int logNum)
+    public void PrintLog(int logNum)
     {
         Console.WriteLine(logs[logNum-1]);
     }
