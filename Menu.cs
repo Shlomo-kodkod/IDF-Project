@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IDF_Project
 {
-    public class Menue
+    public class Menu
     {
         static Simulator simulator = new Simulator();
         IDF idf = simulator.GetIDF();
