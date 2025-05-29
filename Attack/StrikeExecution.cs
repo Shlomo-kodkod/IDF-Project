@@ -105,12 +105,12 @@ namespace IDF_Project
         public int GetIdToAttack(Hamas hamas)
         {
             int id = 0;
-            do
+            id = GetId();
+            while (!hamas.IsTerroristExsist(id))
             {
+                Console.WriteLine("This terrorist id dosn't exsist, please try again.");
                 id = GetId();
             }
-            while (!hamas.IsTerroristExsist(id));
-
             return id;
         }
         
