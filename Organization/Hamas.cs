@@ -30,6 +30,7 @@ namespace IDF_Project
 
         }
 
+
 /// <summary>
         /// Remove a terrorist from the Hamas list.
         /// </summary>
