@@ -44,6 +44,9 @@ namespace IDF_Project
             return this.lastLocation;
         }
 
+/// <summary>
+        /// Gets the last known location from the report to print.
+        /// </summary>
         public string GetLastLocationToPrint()
         {
             string location = "";
