@@ -28,7 +28,12 @@ public class Aman
         }
     }
 
-/// <summary>
+    public void RemoveReportsTerrorist(int ID)
+    {
+        this.dicReport.Remove(ID);
+    }
+
+    /// <summary>
     /// Retrieves the list of reports associated with the given terrorist.
     /// </summary>
     /// <param name="terrorist">The terrorist whose reports are to be retrieved.</param>

@@ -44,6 +44,25 @@ namespace IDF_Project
             return this.lastLocation;
         }
 
+        public string GetLastLocationToPrint()
+        {
+            string location = "";
+            switch (this.lastLocation)
+            {
+                case "buildings":
+                    location="in a building";
+                    break;
+                case "open areas":
+                    location = "in a open areas";
+                    break;
+                default:
+                    location = "on the street";
+                    break;
+            }
+
+            return "Last location : "+location;
+        }
+
 /// <summary>
         /// Gets the timestamp of the last known location.
         /// </summary>

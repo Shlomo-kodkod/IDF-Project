@@ -58,7 +58,8 @@ namespace IDF_Project
             weapon.Fire();
             target.ChangeToDead();
             strikeLog.AddStrikeLog(target, weapon, GetOfficerName(),
-            aman.GetTerroristReport(target)[(aman.GetTerroristReport(target).Count) - 1], weapon.GetCapacity());
+            aman.GetTerroristReport(target)[(aman.GetTerroristReport(target).Count) - 1],weapon.GetCapacity());
+            aman.RemoveReportsTerrorist(terroristId);
         }
 
         public int GetId()

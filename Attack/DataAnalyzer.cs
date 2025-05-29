@@ -30,7 +30,10 @@ namespace IDF_Project
                 }
             }
 
-            Console.WriteLine(FindTerroristByReport(currentList));
+            Console.Write(FindTerroristByReport(currentList));
+            Console.WriteLine($"Number of Reports : {maxReported}");
+            Console.WriteLine(currentList[(currentList.Count)-1].GetLastLocationToPrint());
+
         }
 
         public void GetAllStrikeOptions(IDF idf)
@@ -41,7 +44,7 @@ namespace IDF_Project
             }
         }
         
-        public void GetMostDangerousTerrorist(List<Terrorist> list)
+        public void GetMostDangerousTerrorist(List<Terrorist> list,Aman aman)
         {
             Terrorist mostDangereous = null;
             int score = 0;
@@ -54,7 +57,9 @@ namespace IDF_Project
                     score = tscore;
                 }
             }
-            Console.WriteLine(mostDangereous);
+            Console.Write(mostDangereous);
+            List<ReportAman> reportAman = aman.GetTerroristReport(mostDangereous);
+            Console.WriteLine(reportAman[(reportAman.Count)-1].GetLastLocationToPrint());
         }
 
         private int GetWeaponsScore(Terrorist terrorist)
