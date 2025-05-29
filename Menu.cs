@@ -19,13 +19,21 @@ namespace IDF_Project
 
         public void ShowMenue()
         {
-            Console.Write("=== Menue ===\n" +
+            
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.BackgroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine("=== Menue ===");
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.Write(
                 "1 >>> Identifying the terrorist with the most intelligence reports.\n" +
-                "2 >>> Displays all available attack units and ammunition inventory.\n" +
-                "3 >>> Getting the most dangerous terrorist on the basis of quality rating.\n" +
+                "2 >>> Getting the most dangerous terrorist on the basis of quality rating.\n" +
+                "3 >>> Displays all available attack units and ammunition inventory.\n" +
                 "4 >>> Assault by ID number.\n" +
                 "0 >>> Exit\n" +
-                "Enter your choice:");
+                "Enter your choice : ");
+            Console.ResetColor();
+
         }
 
         public string GetChoice()
@@ -35,7 +43,7 @@ namespace IDF_Project
             
             while (! options.Contains(choice))
             {
-                Console.WriteLine("Invalid choice, please try again: ");
+                Console.WriteLine("Invalid choice, please try again : ");
                 choice = Console.ReadLine();
             }
             return choice;
@@ -48,11 +56,11 @@ namespace IDF_Project
                 case "1" :
                     dataAnalyzer.MostReportedTerorist(aman.GetReportDic());
                     break;
-                case "2" :
-                    dataAnalyzer.GetAllStrikeOptions(idf);
+                case "2":
+                    dataAnalyzer.GetMostDangerousTerrorist(hams.GetAliveTerroristList(),aman);
                     break;
-                case "3":
-                    dataAnalyzer.GetMostDangerousTerrorist(hams.GetAliveTerroristList());
+                case "3" :
+                    dataAnalyzer.GetAllStrikeOptions(idf);
                     break;
                 case "4":
                     strikeExecution.MakeStrike(strikeLog, hams, idf, aman);

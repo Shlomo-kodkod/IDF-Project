@@ -25,11 +25,11 @@ namespace IDF_Project
 
         public override string ToString()
         {
-            return $"name: {this.Name}\n" +
+            return $"Name: {this.Name}\n" +
                    $"ID: {this.ID}\n" +
                    $"Rank: {this.Rank}\n" +
-                   $"{(this.IsAlive() ? "Alive" : "Dead")}\n" +
-                   $"{this.GetWeaponsString()}\n";
+                   $"Status: {(this.IsAlive() ? "Alive" : "Dead")}\n" +
+                   $"Weapons: {this.GetWeaponsString()}\n";
 
         }
 
@@ -50,7 +50,7 @@ namespace IDF_Project
 
         public string GetWeaponsString()
         {
-            return String.Join(" ", this.GetWeapons());
+            return String.Join(", ", this.GetWeapons());
         }
 
         public int GetID()
