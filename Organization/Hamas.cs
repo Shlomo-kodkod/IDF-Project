@@ -85,11 +85,17 @@ namespace IDF_Project
         {
             foreach(Terrorist terrorist in TerroristList)
             {
-                if (terrorist.GetID() == terroristId)
+                if (terrorist.GetID() == terroristId && terrorist.IsAlive())
                 {
                     return true;
                 }
+                else if (terrorist.GetID() == terroristId)
+                {
+                    Console.WriteLine("This terrorist is allredy dead.");
+                    return false;
+                }
             }
+            Console.WriteLine("This terroris dosn't exsist.");
             return false;
         }
 

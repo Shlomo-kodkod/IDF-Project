@@ -21,7 +21,7 @@ namespace IDF_Project
             };
         }
 
-/// <summary>
+        /// <summary>
         /// Checks if a name is valid (not empty and only letters).
         /// </summary>
         /// <param name="name">The name to check.</param>
@@ -32,9 +32,9 @@ namespace IDF_Project
             {
                 return false;
             }
-            foreach(char ch in name)
+            foreach (char ch in name)
             {
-                if (! char.IsLetter(ch))
+                if (!char.IsLetter(ch) && ! ch.Equals(' '))
                 {
                     return false;
                 }
@@ -108,7 +108,6 @@ namespace IDF_Project
             id = GetId();
             while (!hamas.IsTerroristExsist(id))
             {
-                Console.WriteLine("This terrorist id dosn't exsist, please try again.");
                 id = GetId();
             }
             return id;
