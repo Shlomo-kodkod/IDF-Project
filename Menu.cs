@@ -35,12 +35,17 @@ namespace IDF_Project
                 "4 >>> Assault by ID number.\n" +
                 "0 >>> Exit\n" +
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "Enter your choice:\n");
 =======
                 "Enter your choice : ");
             Console.ResetColor();
 
 >>>>>>> a09923284c4a9e266d0d6a9aa9c104da340a5c54
+=======
+                "Enter your choice : ");
+            Console.ResetColor();
+>>>>>>> 0e2b05b88edad5be04c0c7b77181c4dedce16dcf
         }
 
 /// <summary>
