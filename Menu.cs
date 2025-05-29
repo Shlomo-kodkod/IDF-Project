@@ -36,7 +36,6 @@ namespace IDF_Project
                 "0 >>> Exit\n" +
                 "Enter your choice : ");
             Console.ResetColor();
-
         }
 
 /// <summary>
