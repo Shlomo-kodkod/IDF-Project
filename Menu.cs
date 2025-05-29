@@ -17,6 +17,9 @@ namespace IDF_Project
         DataAnalyzer dataAnalyzer = simulator.GetDataAnilyzer();
 
 
+/// <summary>
+        /// Shows the main menu to the user with all available actions.
+        /// </summary>
         public void ShowMenue()
         {
             
@@ -36,6 +39,10 @@ namespace IDF_Project
 
         }
 
+/// <summary>
+        /// Reads the user's menu choice and checks if it's valid.
+        /// </summary>
+        /// <returns>The valid choice as a string.</returns>
         public string GetChoice()
         {
             string[] options = new string[] { "0", "1", "2", "3", "4" }; 
@@ -49,6 +56,10 @@ namespace IDF_Project
             return choice;
         }
         
+/// <summary>
+        /// Runs the action based on the user's menu choice.
+        /// </summary>
+        /// <param name="choice">The selected menu option.</param>
         public void MakeChoice(string choice)
         {
             switch (choice)
@@ -71,6 +82,9 @@ namespace IDF_Project
 
         }
 
+/// <summary>
+        /// Starts the menu loop until the user chooses to exit.
+        /// </summary>
         public void RumMenue()
         {
             string choice = "";

@@ -8,11 +8,20 @@ namespace IDF_Project
 {
     public class DataAnalyzer
     {
+/// <summary>
+        /// Finds the terrorist from the report list.
+        /// </summary>
+        /// <param name="report">List of Aman reports.</param>
+        /// <returns>The terrorist from the report.</returns>
         public static Terrorist FindTerroristByReport(List<ReportAman> report)
         {
             return report[0].GetTerrorist();
         }
 
+/// <summary>
+        /// Finds the terrorist with the most reports and prints their info and last location.
+        /// </summary>
+        /// <param name="terrorists">Dictionary with terrorist ID and their reports.</param>
         public void MostReportedTerorist(Dictionary<int, List<ReportAman>> terrorists)
         {
             int maxReported = 0;
@@ -36,6 +45,10 @@ namespace IDF_Project
 
         }
 
+/// <summary>
+        /// Prints all available strike options in the IDF tools list.
+        /// </summary>
+        /// <param name="idf">IDF object with strike tools.</param>
         public void GetAllStrikeOptions(IDF idf)
         {
             foreach (StrikeOptions strikeOptions in idf.GetToolsList())
@@ -44,6 +57,11 @@ namespace IDF_Project
             }
         }
         
+/// <summary>
+        /// Finds and prints the most dangerous terrorist based on rank and weapons.
+        /// </summary>
+        /// <param name="list">List of terrorists to check.</param>
+        /// <param name="aman">Aman object used to get reports.</param>
         public void GetMostDangerousTerrorist(List<Terrorist> list,Aman aman)
         {
             Terrorist mostDangereous = null;
@@ -62,6 +80,11 @@ namespace IDF_Project
             Console.WriteLine(reportAman[(reportAman.Count)-1].GetLastLocationToPrint());
         }
 
+/// <summary>
+        /// Calculates weapon score for a terrorist.
+        /// </summary>
+        /// <param name="terrorist">The terrorist to score.</param>
+        /// <returns>Total score based on weapon types.</returns>
         private int GetWeaponsScore(Terrorist terrorist)
         {
             int score = 0;
@@ -78,12 +101,16 @@ namespace IDF_Project
             }
             return score;
         }
+
+/// <summary>
+        /// Calculates total danger score using rank and weapon score.
+        /// </summary>
+        /// <param name="terrorist">The terrorist to score.</param>
+        /// <returns>Final danger score.</returns>
         private int GetTerroristScore(Terrorist terrorist)
         {
             int score = terrorist.GetRank() * GetWeaponsScore(terrorist);
             return score;
         }
-        
-        
     }
 }
