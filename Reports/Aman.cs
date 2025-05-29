@@ -28,6 +28,10 @@ public class Aman
         }
     }
 
+/// <summary>
+/// Remove all reports from chosen terrorist from Aman reports dictionary.
+/// </summary>
+/// <param name="ID">Chosen terrorist ID</param>
     public void RemoveReportsTerrorist(int ID)
     {
         this.dicReport.Remove(ID);
