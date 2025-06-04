@@ -68,15 +68,15 @@ namespace IDF_Project
         /// <param name="aman">Aman object to get reports and locations.</param>
         public void MakeStrike(StrikeLog strikeLog ,Hamas hamas, IDF idf, Aman aman)
         {
-            int terroristId = GetIdToAttack(hamas);
+            int terroristId = GetIdToAttack(hamas, aman);
             Terrorist target = hamas.FindTerroristById(terroristId);
             string LastLocation = aman.GetLastLocation(target);
             StrikeOptions weapon = idf.GetRelevantToolsList(LastLocation)[0];
             weapon.Fire();
             target.ChangeToDead();
             strikeLog.AddStrikeLog(target, weapon, GetOfficerName(),
-            aman.GetTerroristReport(target)[(aman.GetTerroristReport(target).Count) - 1],weapon.GetCapacity());
-            aman.RemoveReportsTerrorist(terroristId);
+            aman.GetTerroristReport(target)[(aman.GetTerroristReport(target).Count) - 1]);
+            //aman.RemoveReportsTerrorist(terroristId);
         }
 
 /// <summary>
@@ -102,11 +102,12 @@ namespace IDF_Project
         /// </summary>
         /// <param name="hamas">Hamas object to check if terrorist exists.</param>
         /// <returns>A valid terrorist ID.</returns>
-        public int GetIdToAttack(Hamas hamas)
+        public int GetIdToAttack(Hamas hamas, Aman aman)
         {
             int id = 0;
             id = GetId();
-            while (!hamas.IsTerroristExsist(id))
+            Terrorist terrorist = hamas.FindTerroristById(id);
+            while ((!hamas.IsTerroristExsist(id))  || (!aman.IsLastReportExsist(terrorist)))
             {
                 id = GetId();
             }

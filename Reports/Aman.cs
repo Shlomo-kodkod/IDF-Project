@@ -48,7 +48,21 @@ public class Aman
         return this.dicReport[currentId];
     }
 
-/// <summary>
+    public bool IsLastReportExsist(Terrorist terrorist)
+    {
+        try
+        {
+            string lastLocation = GetLastLocation(terrorist);
+            return true;
+        }
+        catch
+        {
+            Console.WriteLine("There is no any data about this terorrist. ");
+            return false;
+        }
+    }
+
+    /// <summary>
     /// Gets the last known location of the specified terrorist based on their last report.
     /// </summary>
     /// <param name="terrorist">The terrorist whose last location is received.</param>

@@ -22,7 +22,7 @@ public class StrikeLog
     /// <param name="operatorName">The name of the operator who executed the strike.</param>
     /// <param name="lastReport">The last intelligence report about the terrorist.</param>
     /// <param name="leftAmmo">The amount of ammunition left in the assault weapon.</param>
-    public void AddStrikeLog(Terrorist terrorist, StrikeOptions typeStrike, string operatorName, ReportAman lastReport, int leftAmmo)
+    public void AddStrikeLog(Terrorist terrorist, StrikeOptions typeStrike, string operatorName, ReportAman lastReport)
     {
         CurentTime = DateTime.Now;
         Terrorist = terrorist;
